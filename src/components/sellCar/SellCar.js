@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import './addcar.css';
 import data from '../../data/carData.json';
 
-const Addcar = ({ handleAddingcar }) => {
+const SellCar = ({ handleSellingcar,car }) => {
   const [Model, setModel] = useState('');
   const [quantity, setQuantity] = useState(0);
 
@@ -24,7 +23,7 @@ const Addcar = ({ handleAddingcar }) => {
   return (
     <>
       <div className='Wrapper'>
-        <h1 className='heading'>Add Your Cars</h1>
+        <h1 className='heading'>Sell Cars</h1>
         <div className='form'>
           <form>
             <label className="label">
@@ -75,10 +74,10 @@ const Addcar = ({ handleAddingcar }) => {
 
           <button
             type='submit'
-            onClick={() => handleAddingcar(selectedBrand,Model, quantity)}
+            onClick={() => handleSellingcar(selectedBrand,Model, quantity)}
             className='btn'
           >
-            Add car
+            Sell car
           </button>
         </div>
       </div>
@@ -87,4 +86,4 @@ const Addcar = ({ handleAddingcar }) => {
   );
 };
 
-export default Addcar;
+export default SellCar;

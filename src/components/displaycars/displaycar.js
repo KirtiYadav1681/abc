@@ -1,22 +1,25 @@
 import React from 'react'
 import './display.css'
+
 const Displaycar = ({car}) => {
   return (
     <div className='wrapper-2'>
-   {/* mapping over array to display cars */}
-            {car?.map((c,index)=>{
-                return(
-                  <ul className='ul'  key={index}>
-                    
-                      <li>Name:{c.Name}</li>
-                      <li>Model:{c.Model}</li>
-                      <li>Quantity:{c.quantity}</li>
-                    
-                    </ul>
-                )
-               
-            })}
-        
+    <table>
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {car?.map((car) => { return <tr>
+          <td>{car.Brand}</td>
+          <td>{car.Model}</td>
+          <td>{car.quantity}</td>
+        </tr>})}
+      </tbody>
+    </table>
     </div>
   )
 }
